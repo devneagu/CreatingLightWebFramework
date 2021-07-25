@@ -1,14 +1,10 @@
-const events  = require('events')
-const eventEmitter = new events()
+const light = require('./light');
 
-const eventHandler = () => {
-    console.log('we triggered this event handler action');
-}
+const start = light();
 
-eventEmitter.on('triggerAction',eventHandler);
+start.listen(4000);
+// start.once('test',function(){
+//     console.log('a test was called');
+// });
 
-eventEmitter.emit('triggerAction');
-eventEmitter.emit('triggerAction');
-eventEmitter.emit('triggerAction');
-eventEmitter.emit('triggerAction');
-eventEmitter.emit('triggerAction');
+// start.emit('test')
